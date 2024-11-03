@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Apply for Job</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div id="job-details" class="mb-5">
+            <!-- Job details will be injected here -->
+        </div>
+
+        <div id="application-form">
+            <h3>Application Form</h3>
+            <form>
+                <div class="mb-3">
+                    <label for="applicantName" class="form-label">Full Name</label>
+                    <input type="text" class="form-control" id="applicantName" required>
+                </div>
+                <div class="mb-3">
+                    <label for="applicantEmail" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="applicantEmail" required>
+                </div>
+                <div class="mb-3">
+                    <label for="resume" class="form-label">Resume</label>
+                    <input type="file" class="form-control" id="resume" required>
+                </div>
+                <button type="submit" id="applyForJob" class="btn btn-primary">Submit Application</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Step 5: Fetch Job Details Using Job ID
+        const urlParams = new URLSearchParams(window.location.search);
+        const jobId = parseInt(urlParams.get('jobId'));
+        const jobs = JSON.parse(localStorage.getItem('jobs'));
+        const job = jobs.find(j => j.id === jobId);
+
+        if (job) {
+            document.getElementById('job-details').innerHTML = `
+                <h2>${job.title}</h2>
+                <h5>${job.company}</h5>
+                <p>${job.description}</p>
+                <ul>
+                    <li>Job Type: ${job.type}</li>
+                    <li>Location: ${job.location}</li>
+                    <li>Experience Required: ${job.experience}</li>
+                </ul>
+            `;
+        } else {
+            document.getElementById('job-details').innerHTML = `<p>Job not found.</p>`;
+        }
+
+        function generateUniqueId() {
+            return 'job-' + Date.now();
+        }
+
+        document.getElementById('applyForJob').addEventListener("click", function (event) {
+            event.preventDefault(); // Prevent the default button action
+            console.log("Application submitted");
+
+            const currentUserEmail = localStorage.getItem('currentUserEmail'); // Get the logged-in user's email
+            const job = jobs.find(j => j.id === jobId); // Find the job by ID
+
+            // Create an applied job object
+            const appliedJob = {
+                id : generateUniqueId(),
+                jobId:job.id,
+                title: job.title,
+                company: job.company,
+                applicationDate: new Date().toISOString().split('T')[0], // Current date
+                status: 'Pending'
+            };
+
+            // Retrieve existing applied jobs for the current user from local storage
+            let appliedJobs = JSON.parse(localStorage.getItem(currentUserEmail)) || [];
+
+            // Add the new applied job
+            appliedJobs.push(appliedJob);
+
+            // Save the updated applied jobs back to local storage using the email as the key
+            localStorage.setItem(currentUserEmail, JSON.stringify(appliedJobs));
+            alert("Applied Successfully");
+            window.location.href = "jobs.html"; // Corrected the URL
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+
+    </script>
+</body>
+
+</html>

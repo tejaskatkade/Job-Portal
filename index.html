@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Jobn Portal</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        nav {
+            background-color: #e3f2fd;
+        }
+
+        .container {
+            background-color: #e3f2fd;
+            margin-bottom: 5%;
+            border-radius: 20px;
+            padding: 1%;
+        }
+
+        a {
+            text-decoration: none;
+            margin-left: 4px;
+        }
+
+        .card {
+            align-items: center;
+        }
+
+        .card img {
+            height: 40%;
+            width: 40%;
+        }
+
+
+        .card .card-title {
+            color: brown;
+            font-weight: bold;
+        }
+
+        .card-title {
+            text-align: center;
+        }
+
+        h1 {
+            text-align: center;
+            padding-bottom: 2%;
+        }
+
+        .company {
+            display: inline-block;
+        }
+
+        .box {
+            width: 50%;
+            margin-top: 3%;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 20px;
+            padding: 3%;
+            text-align: center;
+        }
+
+        .card-text {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Job Portal</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+                aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarScroll">
+                <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="jobs.html">Jobs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="companies.html">Companies</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Services
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Resume Building</a></li>
+                            <li><a class="dropdown-item" href="#">Mock interview</a></li>
+                            <li><a class="dropdown-item" href="#">Carrer Advice</a></li>
+                            <li><a class="dropdown-item" href="#">Certifications</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="contact.html">Contact Us</a></li>
+                        </ul>
+                    </li>
+                    <!-- <li class="nav-item">
+                <a class="nav-link disabled" aria-disabled="true">Link</a>
+              </li> -->
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search by Job" aria-label="Search">
+                    <input class="form-control me-2" type="search" placeholder="Location" aria-label="Search">
+                    <div class="input-group me-2">
+                        <select class="form-select" id="inputGroupSelect03"
+                            aria-label="Example select with button addon">
+                            <option selected>Experience</option>
+                            <option value="1">1 Year</option>
+                            <option value="2">2 Year</option>
+                            <option value="3">3 Year</option>
+                            <option value="4">4 Year</option>
+                        </select>
+                    </div>
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+                <!-- <a href="signin.html">
+                    <button class="btn btn-outline-primary " type="">Sign in</button>
+                </a> -->
+                <button onclick="openProfile()" class="btn btn-outline-primary m-1" type="">Profile</button>
+
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container mt-5">
+        <h1>Perfect place to Grow</h1>
+        <div class="card-group row m-3">
+            <div class="col-sm-3  card1">
+                <div class="card">
+                    <img src="images/boost.svg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Boost</h5>
+                        <p clas3="card-text" ;> <small>Stand Out From Crowd</small></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3  card1">
+                <div class="card">
+                    <img src="images/learn.svg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Learn</h5>
+                        <p clas3="card-text" ;> <small>Learn something new</small></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3  card1">
+                <div class="card">
+                    <img src="images/prep.svg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Prepare</h5>
+                        <p clas3="card-text" ;> <small>Prepare best of all</small></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3  card1">
+                <div class="card">
+                    <img src="images/network.svg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">network</h5>
+                        <p clas3="card-text" ;> <small>Build your own network</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="container">
+        <!-- companies -->
+        <div>
+            <h3> Featured Companies</h3>
+        </div>
+        <div class="container">
+            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row">
+                            <div class="col-sm-3 mb-3 mb-sm-0">
+                                <div class="card">
+                                    <img src="images/harman.jpeg" class="card-img-top" alt="...">
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="card">
+                                    <img src="images/birlasoft.webp" class="card-img-top" alt="...">
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="card">
+                                    <img src="images/BNY Mellon.webp" class="card-img-top" alt="...">
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="card">
+                                    <img src="images/capgemini.webp" class="card-img-top" alt="...">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row">
+                            <div class="col-sm-3 mb-3 mb-sm-0">
+                                <div class="card">
+                                    <img src="images/synechron.webp" class="card-img-top" alt="...">
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="card">
+                                    <img src="images/tcs.jpeg" class="card-img-top" alt="...">
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="card">
+                                    <img src="images/ultratech.webp" class="card-img-top" alt="...">
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="card">
+                                    <img src="images/xoriant.jpeg" class="card-img-top" alt="...">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row">
+                            <div class="col-sm-3 mb-3 mb-sm-0">
+                                <div class="card">
+                                    <img src="images/deloitte.webp" class="card-img-top" alt="...">
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="card">
+                                    <img src="images/netflix.webp" class="card-img-top" alt="...">
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="card">
+                                    <img src="images/hdfc bank.webp" class="card-img-top" alt="...">
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="card">
+                                    <img src="images/infosyz.webp" class="card-img-top" alt="...">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row">
+                            <div class="col-sm-3 mb-3 mb-sm-0">
+                                <div class="card">
+                                    <img src="images/Icicibank.webp" class="card-img-top" alt="...">
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="card">
+                                    <img src="images/Jpmorgan.webp" class="card-img-top" alt="...">
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="card">
+                                    <img src="images/kpmg.webp" class="card-img-top" alt="...">
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="card">
+                                    <img src="images/LTImindtree.jpeg" class="card-img-top" alt="...">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- sign in
+    <div class="container box">
+        <h2> Sign in now </h2>
+        <form class="row g-3">
+            <div>
+                <input type="email" placeholder="Email" class="form-control" id="inputEmail4" required>
+            </div>
+            <div>
+                <input type="password" placeholder="Password" class="form-control" id="inputPassword4" required>
+            </div>
+
+            <div class="col-12 button">
+                <a href="signin.html">
+                    <button type="submit" class="btn btn-primary">Sign in</button>
+                </a>
+            </div>
+
+        </form>
+        <h5>Or</h5>
+        <a href="signup.html">
+            <button class="btn btn-primary">Register</button>
+        </a>
+    </div> -->
+
+    <div class="container">
+        <h1>Take Your carrier at next level with us </h1>
+        <div class="row ">
+            <div class="col-sm-2 mb-3 mb-sm-0 ">
+                <div class="card-img-top">
+                    <img src="images/mock-interview.svg" class="card-img-top" alt="...">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Mock Interviews</h5>
+                    <p class="card-text">Master yourself for your next Interview.</p>
+                </div>
+            </div>
+            <div class="col-sm-2 mb-3 mb-sm-0">
+                <div class="card-img-top">
+                    <img src="images/non-engineering-tests.svg" class="card-img-top" alt="...">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Test yourself</h5>
+                    <p class="card-text">Give tests to test yourself.</p>
+                </div>
+            </div>
+
+            <div class="col-sm-2 mb-3 mb-sm-0">
+                <div class="card-img-top">
+                    <img src="images/resume-highlighter.svg" class="card-img-top" alt="...">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Profile Highlighter</h5>
+                    <p class="card-text">Get your profile Highlighted .</p>
+                </div>
+            </div>
+            <div class="col-sm-2 mb-3 mb-sm-0">
+                <div class="card-img-top">
+                    <img src="images/software-developer-tests.svg" class="card-img-top" alt="...">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Software Testing</h5>
+                    <p class="card-text">Develope your skills</p>
+                </div>
+            </div>
+            <div class="col-sm-2 mb-3 mb-sm-0">
+                <div class="card-img-top">
+                    <img src="images/software-testing-tests.svg" class="card-img-top" alt="...">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Mock Interviews</h5>
+                    <p class="card-text">Schedule your mock interviews</p>
+                </div>
+            </div>
+            <div class="col-sm-2 mb-3 mb-sm-0">
+                <div class="card-img-top">
+                    <img src="images/resume-builder.svg" class="card-img-top" alt="...">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Resume Building</h5>
+                    <p class="card-text">Build your resume that gets you high package</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+        <script>
+            function openProfile(){
+                if(localStorage.getItem("currentUserEmail")){
+                    window.location.href = "dashboard.html";
+                }else{
+                    window.location.href = "signin.html";
+                }
+            }
+        </script>
+</body>
+
+</html>
